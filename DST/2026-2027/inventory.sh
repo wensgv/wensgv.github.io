@@ -10,10 +10,7 @@ printf "Inventory report\n================\n\n" > $fichero_res
 
 # !! si se quisiera el directorio absoluto
 ## OPCION A: (antes de la siguiente linea no comentada añadir, descomentando:)
-# carpeta_actual=$(pwd)
-# cd carpeta_dat
-# carpeta_dat=$(pwd)
-# cd carpeta_actual
+# carpeta_dat=$(cd $carpeta_dat;pwd)
 ## OPCION B: (comandos nuevos, antes de la siguiente linea no comentada añadir, descomentando:))
 # carpeta_dat=$(realpath $carpeta_dat)
 printf "Directory: %s\n\n" $carpeta_dat >> $fichero_res
