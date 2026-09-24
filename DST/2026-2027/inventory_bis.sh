@@ -16,13 +16,13 @@ printf "Inventory report\n================\n\n" > $fichero_res
 # carpeta_dat=$(realpath $carpeta_dat)
 printf "Directory: %s\n\n" $carpeta_dat >> $fichero_res
 
-printf "Number of files: %s\n" ${carpeta_dat}/* | wc -l >> $fichero_res
+printf "Number of files: %s\n" $(echo ${carpeta_dat}/* | wc -w) >> $fichero_res
 printf "\n" >> $fichero_res
 
 ## OPCION A
-printf "TXT files: %s\n" ${carpeta_dat}/*.[tT][xX][tT] | wc -l >> $fichero_res
-printf "CSV files: %s\n" ${carpeta_dat}/*.[cC][sS][vV] | wc -l >> $fichero_res
-printf "LOG files: %s\n" ${carpeta_dat}/*.[lL][oO][gG] | wc -l >> $fichero_res
+printf "TXT files: %s\n" $(echo ${carpeta_dat}/*.[tT][xX][tT] | wc -w) >> $fichero_res
+printf "CSV files: %s\n" $(echo ${carpeta_dat}/*.[cC][sS][vV] | wc -w) >> $fichero_res
+printf "LOG files: %s\n" $(echo ${carpeta_dat}/*.[lL][oO][gG] | wc -w) >> $fichero_res
 
 ## OPCION B (comentar la opcion A y descomentar las siguientes 7 lineas:)
 # extensiones=$(ls -A $carpeta_dat | rev | cut -d. -f1 | rev | sort)
@@ -35,9 +35,9 @@ printf "LOG files: %s\n" ${carpeta_dat}/*.[lL][oO][gG] | wc -l >> $fichero_res
 
 ## OPCION C (comandos nuevos, comentar la opcion A y descomentar las siguientes 5 lineas:)
 # shopt -s nocaseglob
-# printf "TXT files: %s\n" ${carpeta_dat}/*.txt | wc -l >> $fichero_res
-# printf "CSV files: %s\n" ${carpeta_dat}/*.csv | wc -l >> $fichero_res
-# printf "LOG files: %s\n" ${carpeta_dat}/*.log | wc -l >> $fichero_res
+# printf "TXT files: %s\n" $(echo ${carpeta_dat}/*.txt | wc -w) >> $fichero_res
+# printf "CSV files: %s\n" $(echo ${carpeta_dat}/*.csv | wc -w) >> $fichero_res
+# printf "LOG files: %s\n" $(echo ${carpeta_dat}/*.log | wc -w) >> $fichero_res
 # shopt -u nocaseglob
 #
 
