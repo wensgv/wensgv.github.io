@@ -35,7 +35,7 @@ RUTA_COMPLETA="$1"
 # Usamos nuevos comandos [estándar] para desglosar la ruta:
 # - 'basename' obtiene solo el nombre del archivo (ej. "exp007_day2.txt").
 # - 'dirname' obtiene la ruta de la carpeta que lo contiene (ej. "../campaign_A/raw_data").
-# También podrían usarse sustituciones de bash "${RUTA_COMPLETA##*/}" y "${RUTA_COMPLETA%/*}"
+# También podrían usarse sustituciones de bash "${RUTA_COMPLETA##*/}" y "${RUTA_COMPLETA%/*}", o con el rev: $(echo "$RUTA_COMPLETA" | rev | cut -d/ -f1 | rev) y $(echo "$RUTA_COMPLETA" | rev | cut -d/ -f2- | rev)
 NOMBRE="$(basename "$RUTA_COMPLETA")"
 CARPETA="$(dirname "$RUTA_COMPLETA")"
 
