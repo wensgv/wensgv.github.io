@@ -32,9 +32,10 @@ RUTA_COMPLETA="$1"
 # ==============================================================================
 # 2. EXTRACCIÓN DE METADATOS
 # ==============================================================================
-# Usamos nuevos comandos [estándar] para desglosar la ruta [1]:
+# Usamos nuevos comandos [estándar] para desglosar la ruta:
 # - 'basename' obtiene solo el nombre del archivo (ej. "exp007_day2.txt").
 # - 'dirname' obtiene la ruta de la carpeta que lo contiene (ej. "../campaign_A/raw_data").
+# También podrían usarse sustituciones de bash "${RUTA_COMPLETA##*/}" y "${RUTA_COMPLETA%/*}"
 NOMBRE="$(basename "$RUTA_COMPLETA")"
 CARPETA="$(dirname "$RUTA_COMPLETA")"
 
