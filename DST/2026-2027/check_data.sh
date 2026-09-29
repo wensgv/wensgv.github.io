@@ -9,7 +9,7 @@
 # FECHA MODIFICACIÓN: -
 # VERSIÓN: v1.0
 # DESCRIPCIÓN:       Valida la existencia, integridad y formato de un archivo de datos, comprobando variables críticas (sample_id, temperature) y la ausencia de errores (ERROR, NA).
-# USO:               ./check_data_W.sh <ruta_del_archivo>
+# USO:               ./check_data.sh <ruta_del_archivo>
 # REQUISITOS:        Requiere Bash y el comando estándar 'grep'.
 # VALORES DE SALIDA (EXIT CODES):
 #   0 : El archivo es válido y cumple todos los requisitos.
